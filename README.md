@@ -12,15 +12,13 @@ With the second variant, changes can be made to the configuration before the obj
 
 ###### With standard configuration
 ```java
-RequestManager rm = new API("127.0.0.1", "8085", "Waldi", "NotYourBirthday").build();
+APIController api = new IslesOfYoreAPI("127.0.0.1", "8085", "Waldi", "NotYourBirthday").build();
 ```
 
 ###### With configuration ability
 ```java
-API api = new API("127.0.0.1", "8085", "Waldi", "NotYourBirthday");
-api.config().setRatelimit(20);
-api.config().setPrint_serverResponse(false);
-RequestManager rm = api.build();
+IslesOfYoreAPI api = new IslesOfYoreAPI();
+...
 ```
 
 ### API Configuration
@@ -28,8 +26,12 @@ Settings can be made to the API by calling the Config method and setting the rel
 
 ```java
 ...
-api.config().setRatelimit(20);
-api.config().setPrint_serverResponse(false);
+api.config().setRatelimit(5);
+api.config().setPrint_serverResponse(true);
+api.config().setHost("127.0.0.1");
+api.config().setPort("8085");
+api.config().setUsername("Waldi");
+api.config().setPassword("NotYourBirthday");
 ...
 ```
 
