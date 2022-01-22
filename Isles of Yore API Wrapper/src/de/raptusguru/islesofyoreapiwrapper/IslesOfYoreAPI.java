@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package de.raptusguru.islesofyoreapiwrapper;
+
 import de.raptusguru.islesofyoreapiwrapper.logger.LOGLEVEL;
 import de.raptusguru.islesofyoreapiwrapper.logger.Logger;
 
@@ -21,15 +22,13 @@ import de.raptusguru.islesofyoreapiwrapper.logger.Logger;
  * @author Raptusguru
  *
  */
-public class API {
-
+public class IslesOfYoreAPI {
 	private Config config;
-	private RequestManager requestManager;
-	
+
 	/**
 	 * 
 	 */
-	public API() {
+	public IslesOfYoreAPI() {
 		this.config = new Config();
 	}
 	
@@ -39,26 +38,27 @@ public class API {
 	 * @param username
 	 * @param password
 	 */
-	public API(String host, String port, String username, String password) {
+	public IslesOfYoreAPI(String host, String port, String username, String password) {
 		this.config = new Config(host, port, username, password);
 	}
 	
 	/**
-	 * @return
+	 * @return The API Controller Object
+	 */
+	public APIController build() {
+		Logger.log(this.getClass().getSimpleName(), LOGLEVEL.INFO, "Building API..");
+		this.config.validate();
+		RequestManager rm = new RequestManager(this.config);
+		APIController apiController = new APIController(rm);
+		Logger.log(this.getClass().getSimpleName(), LOGLEVEL.INFO, "API Ready");
+		return apiController;
+	}
+	
+	/**
+	 * @return The API Configuration Object
 	 */
 	public Config config() {
 		return this.config;
 	}
-
-	/**
-	 * @return
-	 */
-	public RequestManager build() {
-		Logger.log(this.getClass().getSimpleName(), LOGLEVEL.INFO, "Building API..");
-		this.config.validate();
-		this.requestManager = new RequestManager(this.config);
-		
-		Logger.log(this.getClass().getSimpleName(), LOGLEVEL.INFO, "API Ready");
-		return this.requestManager;
-	}
+	
 }

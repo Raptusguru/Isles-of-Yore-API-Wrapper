@@ -19,28 +19,29 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class AdminModel {
-
-	private String id;
+public class Announcement {
+	private String message;
 
 	/**
-	 * @param id
+	 * @param message
 	 */
-	public AdminModel(String id) {
-		this.setId(id);
+	public Announcement(String message) {
+		this.message = message;
 	}
 
 	/**
-	 * @return the id
+	 * @return the message
 	 */
-	public String getId() {
-		return id;
+	public String getMessage() {
+		return message;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param message the message to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setMessage(String message) {
+		this.message = message;
 	}
+	
+	
 }

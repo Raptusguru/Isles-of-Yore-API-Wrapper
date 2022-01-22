@@ -25,9 +25,12 @@ import java.time.format.DateTimeFormatter;
  */
 public class Logger {
 
+	
 	/**
-	 * @param logLevel
+	 * A static Logger method that can be used to log everything with date and time to the console output
+	 * 
 	 * @param className
+	 * @param logLevel
 	 * @param msg
 	 */
 	public static void log(String className, LOGLEVEL logLevel, String msg) {
@@ -72,10 +75,16 @@ public class Logger {
 		System.out.println(formattedMsg);
 	}
 	
+	/**
+	 * @return String
+	 */
 	private static String getDate() {
 		return DateTimeFormatter.ofPattern("dd.MM.yyyy").format(LocalDate.now());
 	}
 	
+	/**
+	 * @return String
+	 */
 	private static String getTime() {
 		return DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalTime.now());
 	}

@@ -19,7 +19,7 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class NeedsModel {
+public class Needs {
 	private double eat;
 	private double drink;
 	private double oxygen;
@@ -30,7 +30,7 @@ public class NeedsModel {
 	 * @param oxygen
 	 * @param rest
 	 */
-	public NeedsModel(double eat, double drink, double oxygen, double rest) {
+	public Needs(double eat, double drink, double oxygen, double rest) {
 		super();
 		this.eat = eat;
 		this.drink = drink;

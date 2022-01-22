@@ -19,7 +19,7 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class WorldModel {
+public class World {
 	private double time;
 	private String weather;
 	private String season;
@@ -38,7 +38,7 @@ public class WorldModel {
 	 * @param latitude
 	 * @param longitude
 	 */
-	public WorldModel(double time, String weather, String season, int day, int month, int year, double latitude,
+	public World(double time, String weather, String season, int day, int month, int year, double latitude,
 			double longitude) {
 		super();
 		this.time = time;

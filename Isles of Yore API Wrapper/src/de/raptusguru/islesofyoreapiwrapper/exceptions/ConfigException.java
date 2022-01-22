@@ -19,6 +19,7 @@ package de.raptusguru.islesofyoreapiwrapper.exceptions;
  * @author Raptusguru
  *
  */
+@SuppressWarnings("serial")
 public class ConfigException extends Exception{
 	public ConfigException(String errorMessage) {
         super(errorMessage);

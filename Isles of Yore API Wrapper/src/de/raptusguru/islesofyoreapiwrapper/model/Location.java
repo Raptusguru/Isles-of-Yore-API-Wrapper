@@ -19,74 +19,57 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class ColorModel {
-	private double r;
-	private double g;
-	private double b;
-	private int a;
+public class Location {
+	private double x;
+	private double y;
+	private double z;
 	/**
-	 * @param r
-	 * @param g
-	 * @param b
-	 * @param a
+	 * @param x
+	 * @param y
+	 * @param z
 	 */
-	public ColorModel(double r, double g, double b, int a) {
+	public Location(double x, double y, double z) {
 		super();
-		this.r = r;
-		this.g = g;
-		this.b = b;
-		this.a = a;
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 	/**
-	 * @return the r
+	 * @return the x
 	 */
-	public double getR() {
-		return r;
+	public double getX() {
+		return x;
 	}
 	/**
-	 * @param r the r to set
+	 * @param x the x to set
 	 */
-	public void setR(double r) {
-		this.r = r;
+	public void setX(double x) {
+		this.x = x;
 	}
 	/**
-	 * @return the g
+	 * @return the y
 	 */
-	public double getG() {
-		return g;
+	public double getY() {
+		return y;
 	}
 	/**
-	 * @param g the g to set
+	 * @param y the y to set
 	 */
-	public void setG(double g) {
-		this.g = g;
+	public void setY(double y) {
+		this.y = y;
 	}
 	/**
-	 * @return the b
+	 * @return the z
 	 */
-	public double getB() {
-		return b;
+	public double getZ() {
+		return z;
 	}
 	/**
-	 * @param b the b to set
+	 * @param z the z to set
 	 */
-	public void setB(double b) {
-		this.b = b;
+	public void setZ(double z) {
+		this.z = z;
 	}
-	/**
-	 * @return the a
-	 */
-	public int getA() {
-		return a;
-	}
-	/**
-	 * @param a the a to set
-	 */
-	public void setA(int a) {
-		this.a = a;
-	}
-	
-	
 	
 	
 }

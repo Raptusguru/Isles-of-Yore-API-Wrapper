@@ -19,63 +19,74 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class AlphasModel {
-	private String slot;
-	private String id;
-	private ColorModel color;
-	
+public class Color {
+	private double r;
+	private double g;
+	private double b;
+	private int a;
 	/**
-	 * @param slot
-	 * @param id
-	 * @param color
+	 * @param r
+	 * @param g
+	 * @param b
+	 * @param a
 	 */
-	public AlphasModel(String slot, String id, ColorModel color) {
+	public Color(double r, double g, double b, int a) {
 		super();
-		this.slot = slot;
-		this.id = id;
-		this.color = color;
+		this.r = r;
+		this.g = g;
+		this.b = b;
+		this.a = a;
 	}
-
 	/**
-	 * @return the slot
+	 * @return the r
 	 */
-	public String getSlot() {
-		return slot;
+	public double getR() {
+		return r;
 	}
-
 	/**
-	 * @param slot the slot to set
+	 * @param r the r to set
 	 */
-	public void setSlot(String slot) {
-		this.slot = slot;
+	public void setR(double r) {
+		this.r = r;
 	}
-
 	/**
-	 * @return the id
+	 * @return the g
 	 */
-	public String getId() {
-		return id;
+	public double getG() {
+		return g;
 	}
-
 	/**
-	 * @param id the id to set
+	 * @param g the g to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setG(double g) {
+		this.g = g;
 	}
-
 	/**
-	 * @return the color
+	 * @return the b
 	 */
-	public ColorModel getColor() {
-		return color;
+	public double getB() {
+		return b;
 	}
-
 	/**
-	 * @param color the color to set
+	 * @param b the b to set
 	 */
-	public void setColor(ColorModel color) {
-		this.color = color;
+	public void setB(double b) {
+		this.b = b;
 	}
+	/**
+	 * @return the a
+	 */
+	public int getA() {
+		return a;
+	}
+	/**
+	 * @param a the a to set
+	 */
+	public void setA(int a) {
+		this.a = a;
+	}
+	
+	
+	
 	
 }

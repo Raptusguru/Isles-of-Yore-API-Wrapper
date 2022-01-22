@@ -19,57 +19,28 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class LocationModel {
-	private double x;
-	private double y;
-	private double z;
+public class Admin {
+
+	private String id;
+
 	/**
-	 * @param x
-	 * @param y
-	 * @param z
+	 * @param id
 	 */
-	public LocationModel(double x, double y, double z) {
-		super();
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	public Admin(String id) {
+		this.setId(id);
 	}
+
 	/**
-	 * @return the x
+	 * @return the id
 	 */
-	public double getX() {
-		return x;
+	public String getId() {
+		return id;
 	}
+
 	/**
-	 * @param x the x to set
+	 * @param id the id to set
 	 */
-	public void setX(double x) {
-		this.x = x;
+	public void setId(String id) {
+		this.id = id;
 	}
-	/**
-	 * @return the y
-	 */
-	public double getY() {
-		return y;
-	}
-	/**
-	 * @param y the y to set
-	 */
-	public void setY(double y) {
-		this.y = y;
-	}
-	/**
-	 * @return the z
-	 */
-	public double getZ() {
-		return z;
-	}
-	/**
-	 * @param z the z to set
-	 */
-	public void setZ(double z) {
-		this.z = z;
-	}
-	
-	
 }

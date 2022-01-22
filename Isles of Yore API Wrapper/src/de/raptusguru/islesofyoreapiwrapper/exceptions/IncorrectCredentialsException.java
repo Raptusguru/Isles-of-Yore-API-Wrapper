@@ -19,6 +19,7 @@ package de.raptusguru.islesofyoreapiwrapper.exceptions;
  * @author Raptusguru
  *
  */
+@SuppressWarnings("serial")
 public class IncorrectCredentialsException extends Exception{
 	public IncorrectCredentialsException(String errorMessage) {
         super(errorMessage);

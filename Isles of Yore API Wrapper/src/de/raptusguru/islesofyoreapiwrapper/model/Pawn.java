@@ -19,11 +19,11 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class PawnModel {
+public class Pawn {
 	private String species;
-	private PersistedSkinModel persistedSkin;
+	private PersistedSkin persistedSkin;
 	private String ownerUserID;
-	private LocationModel location;
+	private Location location;
 	private double growth;
 	private double health;
 	private double stamina;
@@ -42,7 +42,7 @@ public class PawnModel {
 	 * @param hunger
 	 * @param oxygen
 	 */
-	public PawnModel(String species, PersistedSkinModel persistedSkin, String ownerUserID, LocationModel location,
+	public Pawn(String species, PersistedSkin persistedSkin, String ownerUserID, Location location,
 			double growth, double health, double stamina, double thirst, double hunger, double oxygen) {
 		super();
 		this.species = species;
@@ -71,13 +71,13 @@ public class PawnModel {
 	/**
 	 * @return the persistedSkin
 	 */
-	public PersistedSkinModel getPersistedSkin() {
+	public PersistedSkin getPersistedSkin() {
 		return persistedSkin;
 	}
 	/**
 	 * @param persistedSkin the persistedSkin to set
 	 */
-	public void setPersistedSkin(PersistedSkinModel persistedSkin) {
+	public void setPersistedSkin(PersistedSkin persistedSkin) {
 		this.persistedSkin = persistedSkin;
 	}
 	/**
@@ -95,13 +95,13 @@ public class PawnModel {
 	/**
 	 * @return the location
 	 */
-	public LocationModel getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 	/**
 	 * @param location the location to set
 	 */
-	public void setLocation(LocationModel location) {
+	public void setLocation(Location location) {
 		this.location = location;
 	}
 	/**

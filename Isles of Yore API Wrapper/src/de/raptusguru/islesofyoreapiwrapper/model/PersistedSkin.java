@@ -21,17 +21,17 @@ import java.util.List;
  * @author Raptusguru
  *
  */
-public class PersistedSkinModel {
+public class PersistedSkin {
 	private String basePresetID;
-	private BaseColourModel baseColour;
-	private List<AlphasModel> alphas;
+	private BaseColour baseColour;
+	private List<Alpha> alphas;
 	
 	/**
 	 * @param basePresetID
 	 * @param baseColour
 	 * @param alphas
 	 */
-	public PersistedSkinModel(String basePresetID, BaseColourModel baseColour, List<AlphasModel> alphas) {
+	public PersistedSkin(String basePresetID, BaseColour baseColour, List<Alpha> alphas) {
 		this.basePresetID = basePresetID;
 		this.baseColour = baseColour;
 		this.alphas = alphas;
@@ -54,28 +54,28 @@ public class PersistedSkinModel {
 	/**
 	 * @return the baseColour
 	 */
-	public BaseColourModel getBaseColour() {
+	public BaseColour getBaseColour() {
 		return baseColour;
 	}
 
 	/**
 	 * @param baseColour the baseColour to set
 	 */
-	public void setBaseColour(BaseColourModel baseColour) {
+	public void setBaseColour(BaseColour baseColour) {
 		this.baseColour = baseColour;
 	}
 
 	/**
 	 * @return the alphas
 	 */
-	public List<AlphasModel> getAlphas() {
+	public List<Alpha> getAlphas() {
 		return alphas;
 	}
 
 	/**
 	 * @param alphas the alphas to set
 	 */
-	public void setAlphas(List<AlphasModel> alphas) {
+	public void setAlphas(List<Alpha> alphas) {
 		this.alphas = alphas;
 	}
 	

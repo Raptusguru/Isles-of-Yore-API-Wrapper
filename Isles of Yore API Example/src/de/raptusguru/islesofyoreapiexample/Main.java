@@ -17,14 +17,15 @@ package de.raptusguru.islesofyoreapiexample;
 
 import java.util.List;
 
-import de.raptusguru.islesofyoreapiwrapper.API;
-import de.raptusguru.islesofyoreapiwrapper.RequestManager;
-import de.raptusguru.islesofyoreapiwrapper.model.AIModel;
-import de.raptusguru.islesofyoreapiwrapper.model.AdminModel;
-import de.raptusguru.islesofyoreapiwrapper.model.BanModel;
-import de.raptusguru.islesofyoreapiwrapper.model.PlayerModel;
-import de.raptusguru.islesofyoreapiwrapper.model.PlayersModel;
-import de.raptusguru.islesofyoreapiwrapper.model.WorldModel;
+import de.raptusguru.islesofyoreapiwrapper.APIController;
+import de.raptusguru.islesofyoreapiwrapper.IslesOfYoreAPI;
+import de.raptusguru.islesofyoreapiwrapper.model.AI;
+import de.raptusguru.islesofyoreapiwrapper.model.Admin;
+import de.raptusguru.islesofyoreapiwrapper.model.Ban;
+import de.raptusguru.islesofyoreapiwrapper.model.CustomNameColour;
+import de.raptusguru.islesofyoreapiwrapper.model.Player;
+import de.raptusguru.islesofyoreapiwrapper.model.OnlinePlayer;
+import de.raptusguru.islesofyoreapiwrapper.model.World;
 
 /**
  * @author Raptusguru
@@ -36,14 +37,18 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/*
-		 * Variant 1 for set up API Options
-		 * 
-		 * For configure the Ratelimit you can use
-		 * API api = new API("127.0.0.1", "8085", "Waldi", "NotYourBirthday");
-		 * api.config.setRatelimit(5);
-		 * RequestManager rm = api.build();
-		 */
+
+//			Variant 1 for set up API Options
+//			
+//			IslesOfYoreAPI api = new IslesOfYoreAPI();
+//			api.config().setRatelimit(20);
+//			api.config().setPrint_serverResponse(true);
+//			api.config().setHost("underground-community.com");
+//			api.config().setPort("8085");
+//			api.config().setUsername("Admin");
+//			api.config().setPassword("UCTest");
+//			api.build();
+
 		
 		/*
 		 * Variant 2 for standard options
@@ -51,33 +56,37 @@ public class Main {
 		 * RequestManager rm = new API("127.0.0.1", "8085", "Waldi", "NotYourBirthday").build();
 		 */
 		
-		API api = new API("underground-community.com", "8085", "Admin", "UCTest");
-		api.config().setRatelimit(20);
-		api.config().setPrint_serverResponse(true);
-		RequestManager rm = api.build();
+		IslesOfYoreAPI ioyApi = new IslesOfYoreAPI();
+		ioyApi.config().setRatelimit(20);
+		ioyApi.config().setPrint_serverResponse(true);
+		ioyApi.config().setHost("underground-community.com");
+		ioyApi.config().setPort("8085");
+		ioyApi.config().setUsername("Admin");
+		ioyApi.config().setPassword("UCTest");
+		APIController api = ioyApi.build();
 		
 		//Make an Announcement
-		rm.announce("Hello everyone!");
+		api.announcement().sendAnnouncement("Hello everyone!");
 		
 		// Add a Ban
-		rm.addBan("324234234", "2234234234", "Just a Test Ban");
+		api.bans().addBan("324234234", "2234234234", "Just a Test Ban");
 
 		// Remove a Ban
-		rm.removeBan("324234234");
+		api.bans().removeBan("324234234");
 
 		// Add an Admin
-		rm.addAdmin("123456789");
+		api.admins().addAdmin("123456789");
 
 		// Remove an Admin
-		rm.removeAdmin("123456789");
+		api.admins().removeAdmin("123456789");
 		
 		//Get Admins (IDs)
-		List<AdminModel> adminIDs = rm.getAdmins();
+		List<Admin> adminIDs = api.admins().getAdmins();
 		System.out.println("- All Admins (IDs) -");
 		adminIDs.forEach(admin -> System.out.println("AdminID: " + admin.getId() + "\r"));
 		
 		//Get Bans
-		List<BanModel> bans = rm.getBans();
+		List<Ban> bans = api.bans().getBans();
 		bans.forEach(ban -> System.out.println(
 				"- Banlist -"
 				+ "BanID: " + ban.getBanID() + "\r"
@@ -92,7 +101,7 @@ public class Main {
 		
 		
 		//Get online Players
-		List<PlayersModel> onlinePlayers = rm.getOnlinePlayers();
+		List<OnlinePlayer> onlinePlayers = api.onlinePlayers().getCurrentOnlinePlayers();
 		onlinePlayers.forEach(player -> System.out.println(
 				"- Current online Players"
 				+ "UserName: " + player.getUserName() + "\r"
@@ -108,7 +117,7 @@ public class Main {
 				));
 		
 		//Get a specific Player (saved data)
-		PlayerModel savedPlayer = rm.getSavedPlayer("76561198009027096");
+		Player savedPlayer = api.player().getPlayer("76561198009027096");
 		System.out.println(
 				"- Player Infos -\r"
 				+ "UserID: " + savedPlayer.getUserID() + "\r"
@@ -142,14 +151,14 @@ public class Main {
 		);
 		
 		//Get the Server Uptime
-		String serverUptime = rm.getServerUptime();
+		String serverUptime = api.session().getServerUptime();
 		System.out.println("Server Uptime (UnixUTC): " + serverUptime);
 		
 		//Change Custom Name Colour of a specific User (Currently not working?!)
-		//rm.setCustomNameColourForPlayer("76561198009027096", true, new CustomNameColourModel(0, 250, 234, 1.0));
+		api.customNameColour().setCustomNameColourForPlayer("76561198009027096", true, new CustomNameColour(0, 250, 234, 1.0));
 		
 		//Get actual World Info
-		WorldModel world = rm.getWorld();
+		World world = api.world().getWorld();
 		System.out.println(
 				"- World Info -\r"
 				+ "Time: " + world.getTime() + "\r"
@@ -163,7 +172,7 @@ public class Main {
 				);
 		
 		//Get the AIs from the running Server
-		List<AIModel> ais = rm.getAI();
+		List<AI> ais = api.ai().getCurrentSpawnedAIs();
 		ais.forEach(ai -> 
 			System.out.println(
 					"- AI Info -\r"
@@ -177,7 +186,6 @@ public class Main {
 					+ "Location: (X: " + ai.getLocation().getX() + ", Y: " + ai.getLocation().getY() + ", Z: " + ai.getLocation().getZ() + ")\r"
 					)
 		);
-		
-		
+
 	}
 }

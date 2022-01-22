@@ -13,15 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.raptusguru.islesofyoreapiwrapper.exceptions;
+package de.raptusguru.islesofyoreapiwrapper.controller;
+
+import de.raptusguru.islesofyoreapiwrapper.RequestManager;
 
 /**
  * @author Raptusguru
  *
  */
-@SuppressWarnings("serial")
-public class RatelimitException extends Exception{
-	public RatelimitException(String errorMessage) {
-        super(errorMessage);
-    }
+public class CommandController {
+
+	private RequestManager rm;
+
+	/**
+	 * @param rm
+	 */
+	public CommandController(RequestManager rm) {
+		this.rm = rm;
+	}
+
 }

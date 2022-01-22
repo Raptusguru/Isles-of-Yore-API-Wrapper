@@ -54,6 +54,9 @@ public class Config {
 		this.password = password;
 	}
 
+	/**
+	 * Validating the required values
+	 */
 	public void validate() {
 		try {
 			if(host == null || host.isEmpty())
@@ -153,8 +156,4 @@ public class Config {
 	public void setPrint_serverResponse(boolean print_serverResponse) {
 		this.print_serverResponse = print_serverResponse;
 	}
-
-	
-
-	
 }

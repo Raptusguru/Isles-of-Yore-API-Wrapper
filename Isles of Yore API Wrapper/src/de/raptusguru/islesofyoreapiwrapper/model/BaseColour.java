@@ -19,7 +19,7 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class BaseColourModel {
+public class BaseColour {
 	private double r;
 	private double g;
 	private double b;
@@ -30,7 +30,7 @@ public class BaseColourModel {
 	 * @param b
 	 * @param a
 	 */
-	public BaseColourModel(double r, double g, double b, int a) {
+	public BaseColour(double r, double g, double b, int a) {
 		super();
 		this.r = r;
 		this.g = g;

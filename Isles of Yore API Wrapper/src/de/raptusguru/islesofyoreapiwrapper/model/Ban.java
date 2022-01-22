@@ -19,7 +19,7 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class BanModel {
+public class Ban {
 
 	private String banID;
 	private String userID;
@@ -40,7 +40,7 @@ public class BanModel {
 	 * @param timeStampUnixUTC
 	 * @param durationInSeconds
 	 */
-	public BanModel(String banID, String userID, String lastKnownUsername, String bannedByUserID,
+	public Ban(String banID, String userID, String lastKnownUsername, String bannedByUserID,
 			String bannedByUserName, String reason, String timeStampUnixUTC, long durationInSeconds) {
 		this.banID = banID;
 		this.userID = userID;

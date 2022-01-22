@@ -19,19 +19,21 @@ package de.raptusguru.islesofyoreapiwrapper.model;
  * @author Raptusguru
  *
  */
-public class AIModel {
-	
-	private boolean isActive;
+public class OnlinePlayer {
+
+	private String userName;
+	private String UserID;
 	private String species;
-	private NeedsModel needs;
+	private Needs needs;
 	private double growth;
 	private String growthStage;
 	private double health;
 	private boolean isAlive;
-	private LocationModel location;
-	
+	private Location location;
+	private String loginUnixUTCTimestamp;
 	/**
-	 * @param isActive
+	 * @param userName
+	 * @param userID
 	 * @param species
 	 * @param needs
 	 * @param growth
@@ -39,10 +41,13 @@ public class AIModel {
 	 * @param health
 	 * @param isAlive
 	 * @param location
+	 * @param loginUnixUTCTimestamp
 	 */
-	public AIModel(boolean isActive, String species, NeedsModel needs, double growth, String growthStage, double health,
-			boolean isAlive, LocationModel location) {
-		this.isActive = isActive;
+	public OnlinePlayer(String userName, String userID, String species, Needs needs, double growth,
+			String growthStage, double health, boolean isAlive, Location location, String loginUnixUTCTimestamp) {
+		super();
+		this.userName = userName;
+		UserID = userID;
 		this.species = species;
 		this.needs = needs;
 		this.growth = growth;
@@ -50,19 +55,31 @@ public class AIModel {
 		this.health = health;
 		this.isAlive = isAlive;
 		this.location = location;
-	}
-	
-	/**
-	 * @return the isActive
-	 */
-	public boolean isActive() {
-		return isActive;
+		this.loginUnixUTCTimestamp = loginUnixUTCTimestamp;
 	}
 	/**
-	 * @param isActive the isActive to set
+	 * @return the userName
 	 */
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
+	public String getUserName() {
+		return userName;
+	}
+	/**
+	 * @param userName the userName to set
+	 */
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	/**
+	 * @return the userID
+	 */
+	public String getUserID() {
+		return UserID;
+	}
+	/**
+	 * @param userID the userID to set
+	 */
+	public void setUserID(String userID) {
+		UserID = userID;
 	}
 	/**
 	 * @return the species
@@ -79,13 +96,13 @@ public class AIModel {
 	/**
 	 * @return the needs
 	 */
-	public NeedsModel getNeeds() {
+	public Needs getNeeds() {
 		return needs;
 	}
 	/**
 	 * @param needs the needs to set
 	 */
-	public void setNeeds(NeedsModel needs) {
+	public void setNeeds(Needs needs) {
 		this.needs = needs;
 	}
 	/**
@@ -139,14 +156,27 @@ public class AIModel {
 	/**
 	 * @return the location
 	 */
-	public LocationModel getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 	/**
 	 * @param location the location to set
 	 */
-	public void setLocation(LocationModel location) {
+	public void setLocation(Location location) {
 		this.location = location;
 	}
+	/**
+	 * @return the loginUnixUTCTimestamp
+	 */
+	public String getLoginUnixUTCTimestamp() {
+		return loginUnixUTCTimestamp;
+	}
+	/**
+	 * @param loginUnixUTCTimestamp the loginUnixUTCTimestamp to set
+	 */
+	public void setLoginUnixUTCTimestamp(String loginUnixUTCTimestamp) {
+		this.loginUnixUTCTimestamp = loginUnixUTCTimestamp;
+	}
+	
 	
 }

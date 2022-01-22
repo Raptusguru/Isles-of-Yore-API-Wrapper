@@ -21,14 +21,14 @@ import java.util.List;
  * @author Raptusguru
  *
  */
-public class PlayerModel {
+public class Player {
 	private String userID;
 	private String lastKnownUsername;
 	private List<String> allKnownUsernames;
 	private List<String> logonTimestamps;
 	private boolean useCustomColour;
-	private CustomNameColourModel customNameColour;
-	private PawnModel pawn;
+	private CustomNameColour customNameColour;
+	private Pawn pawn;
 	private boolean hasPersitedPawn;
 	
 	/**
@@ -41,9 +41,9 @@ public class PlayerModel {
 	 * @param pawn
 	 * @param hasPersitedPawn
 	 */
-	public PlayerModel(String userID, String lastKnownUsername, List<String> allKnownUsernames,
-			List<String> logonTimestamps, boolean useCustomColour, CustomNameColourModel customNameColour,
-			PawnModel pawn, boolean hasPersitedPawn) {
+	public Player(String userID, String lastKnownUsername, List<String> allKnownUsernames,
+			List<String> logonTimestamps, boolean useCustomColour, CustomNameColour customNameColour,
+			Pawn pawn, boolean hasPersitedPawn) {
 		this.userID = userID;
 		this.lastKnownUsername = lastKnownUsername;
 		this.allKnownUsernames = allKnownUsernames;
@@ -127,28 +127,28 @@ public class PlayerModel {
 	/**
 	 * @return the customNameColour
 	 */
-	public CustomNameColourModel getCustomNameColour() {
+	public CustomNameColour getCustomNameColour() {
 		return customNameColour;
 	}
 
 	/**
 	 * @param customNameColour the customNameColour to set
 	 */
-	public void setCustomNameColour(CustomNameColourModel customNameColour) {
+	public void setCustomNameColour(CustomNameColour customNameColour) {
 		this.customNameColour = customNameColour;
 	}
 
 	/**
 	 * @return the pawn
 	 */
-	public PawnModel getPawn() {
+	public Pawn getPawn() {
 		return pawn;
 	}
 
 	/**
 	 * @param pawn the pawn to set
 	 */
-	public void setPawn(PawnModel pawn) {
+	public void setPawn(Pawn pawn) {
 		this.pawn = pawn;
 	}
 
