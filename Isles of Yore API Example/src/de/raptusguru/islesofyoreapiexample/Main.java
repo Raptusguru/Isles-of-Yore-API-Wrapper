@@ -22,7 +22,6 @@ import de.raptusguru.islesofyoreapiwrapper.IslesOfYoreAPI;
 import de.raptusguru.islesofyoreapiwrapper.model.AI;
 import de.raptusguru.islesofyoreapiwrapper.model.Admin;
 import de.raptusguru.islesofyoreapiwrapper.model.Ban;
-import de.raptusguru.islesofyoreapiwrapper.model.CustomNameColour;
 import de.raptusguru.islesofyoreapiwrapper.model.Player;
 import de.raptusguru.islesofyoreapiwrapper.model.OnlinePlayer;
 import de.raptusguru.islesofyoreapiwrapper.model.World;
@@ -37,32 +36,14 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
-//			Variant 1 for set up API Options
-//			
-//			IslesOfYoreAPI api = new IslesOfYoreAPI();
-//			api.config().setRatelimit(20);
-//			api.config().setPrint_serverResponse(true);
-//			api.config().setHost("underground-community.com");
-//			api.config().setPort("8085");
-//			api.config().setUsername("Admin");
-//			api.config().setPassword("UCTest");
-//			api.build();
-
-		
-		/*
-		 * Variant 2 for standard options
-		 * 
-		 * RequestManager rm = new API("127.0.0.1", "8085", "Waldi", "NotYourBirthday").build();
-		 */
 		
 		IslesOfYoreAPI ioyApi = new IslesOfYoreAPI();
 		ioyApi.config().setRatelimit(20);
-		ioyApi.config().setPrint_serverResponse(true);
-		ioyApi.config().setHost("underground-community.com");
+		ioyApi.config().setPrint_serverResponse(false);
+		ioyApi.config().setHost("127.0.0.1");
 		ioyApi.config().setPort("8085");
-		ioyApi.config().setUsername("Admin");
-		ioyApi.config().setPassword("UCTest");
+		ioyApi.config().setUsername("Waldi");
+		ioyApi.config().setPassword("NotYourBirthday");
 		APIController api = ioyApi.build();
 		
 		//Make an Announcement
@@ -155,7 +136,7 @@ public class Main {
 		System.out.println("Server Uptime (UnixUTC): " + serverUptime);
 		
 		//Change Custom Name Colour of a specific User (Currently not working?!)
-		api.customNameColour().setCustomNameColourForPlayer("76561198009027096", true, new CustomNameColour(0, 250, 234, 1.0));
+		//api.customNameColour().setCustomNameColourForPlayer("76561198009027096", true, new CustomNameColour(0, 250, 234, 1.0));
 		
 		//Get actual World Info
 		World world = api.world().getWorld();
