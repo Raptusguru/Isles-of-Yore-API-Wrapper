@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.raptusguru.islesofyoreapiwrapper.config;
+package de.raptusguru.islesofyoreapiwrapper.exceptions;
 
 /**
  * @author Raptusguru
  *
  */
-public class APIConfig {
-
+public class IncorrectCredentialsException extends Exception{
+	public IncorrectCredentialsException(String errorMessage) {
+        super(errorMessage);
+    }
 }
