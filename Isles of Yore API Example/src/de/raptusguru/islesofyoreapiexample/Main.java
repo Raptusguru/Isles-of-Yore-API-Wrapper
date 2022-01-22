@@ -49,6 +49,9 @@ public class Main {
 		//Make an Announcement
 		api.announcement().sendAnnouncement("Hello everyone!");
 		
+		//Send a command to the gameserver like ingame console command
+		api.command().sendCommand("sim.time", new String[] {"9"});
+		
 		// Add a Ban
 		api.bans().addBan("324234234", "2234234234", "Just a Test Ban");
 
@@ -167,6 +170,8 @@ public class Main {
 					+ "Location: (X: " + ai.getLocation().getX() + ", Y: " + ai.getLocation().getY() + ", Z: " + ai.getLocation().getZ() + ")\r"
 					)
 		);
+		
+		
 
 	}
 }
