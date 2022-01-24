@@ -23,6 +23,7 @@ import de.raptusguru.islesofyoreapiwrapper.model.AI;
 import de.raptusguru.islesofyoreapiwrapper.model.Admin;
 import de.raptusguru.islesofyoreapiwrapper.model.Ban;
 import de.raptusguru.islesofyoreapiwrapper.model.Player;
+import de.raptusguru.islesofyoreapiwrapper.model.Team;
 import de.raptusguru.islesofyoreapiwrapper.model.OnlinePlayer;
 import de.raptusguru.islesofyoreapiwrapper.model.World;
 
@@ -171,7 +172,30 @@ public class Main {
 					)
 		);
 		
-		
+		//Get the Teams from the Server
+		List<Team> teams = api.teams().getActiveTeams();
+		teams.forEach(team ->{
+			System.out.println(
+					"- Team Info -\r"
+					+ "IsActiveTeam: " + team.isActiveTeam() + "\r"
+					+ "UniqueID: " + team.getUniqueID() + "\r"
+					+ "TeamLeaderUserID: " + team.getTeamLeaderUserID() + "\r"
+					+ "MaxMembers: " + team.getMaxMembers() + "\r"
+					);
+			team.getTeamMember().forEach(member ->
+				System.out.println(
+						"*TeamMembers\r"
+						+ "UserID: " + member.getUserID() + "\r"
+						)
+					);
+			team.getAllowedMemberSpecies().forEach(species ->
+			System.out.println(
+					"*Allowed Member Species\r"
+					+ "Allowed: " + species + "\r"
+					)
+				);
+			}
+		);
 
 	}
 }
