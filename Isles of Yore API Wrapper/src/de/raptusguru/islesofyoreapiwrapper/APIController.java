@@ -24,6 +24,7 @@ import de.raptusguru.islesofyoreapiwrapper.controller.CustomNameColourController
 import de.raptusguru.islesofyoreapiwrapper.controller.OnlinePlayersController;
 import de.raptusguru.islesofyoreapiwrapper.controller.PlayerController;
 import de.raptusguru.islesofyoreapiwrapper.controller.SessionController;
+import de.raptusguru.islesofyoreapiwrapper.controller.TeamsController;
 import de.raptusguru.islesofyoreapiwrapper.controller.WorldController;
 
 /**
@@ -42,6 +43,7 @@ public class APIController {
 	private WorldController world;
 	private SessionController session;
 	private CustomNameColourController customNameColour;
+	private TeamsController teams;
 	
 	/**
 	 * @param rm
@@ -57,6 +59,7 @@ public class APIController {
 		this.world = new WorldController(rm);
 		this.session = new SessionController(rm);
 		this.customNameColour = new CustomNameColourController(rm);
+		this.teams = new TeamsController(rm);
 	}
 
 	/**
@@ -127,6 +130,13 @@ public class APIController {
 	 */
 	public CustomNameColourController customNameColour() {
 		return customNameColour;
+	}
+
+	/**
+	 * @return the teams
+	 */
+	public TeamsController teams() {
+		return teams;
 	}
 	
 	
