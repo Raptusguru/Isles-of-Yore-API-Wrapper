@@ -1,7 +1,7 @@
 # (JAVA) API Wrapper for *Isles of Yore* (Servers)
 ***This API wrapper is currently under development and may be subject to significant changes. The API wrapper is not yet in a final version.***
 ###### Isles of Yore - Steam Page
-[![Paypal](https://cdn.akamai.steamstatic.com/steam/apps/1360850/header.jpg)](https://store.steampowered.com/app/1360850/Isles_of_Yore/)  
+[![Isles of Yore on Steam](https://cdn.akamai.steamstatic.com/steam/apps/1360850/header.jpg)](https://store.steampowered.com/app/1360850/Isles_of_Yore/)  
 [Isles of Yore on Steam](https://store.steampowered.com/app/1360850/Isles_of_Yore/)
 
 
