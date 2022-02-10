@@ -6,6 +6,9 @@
 
 
 ## Usage
+*There is a little tutorial on youtube. Check it out!
+[API Wrapper Tutorial](https://www.youtube.com/watch?v=2I-twFIEg6Y)
+
 ### Creating the API Object
 There are two ways to create the API object. The simple variant offers no possibility to access the configuration.
 With the second variant, changes can be made to the configuration before the object will be created.
